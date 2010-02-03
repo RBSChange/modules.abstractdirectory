@@ -1,0 +1,5 @@
+<ol class="module-list">
+	<li tal:repeat="item items">
+		<span change:include="module moduleName; template php: ucfirst(moduleName) . '-Block-' . ucfirst(componentName) . '-Success'; type 'html'; item item" />
+	</li>
+</ol>

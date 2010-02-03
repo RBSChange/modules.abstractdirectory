@@ -1,0 +1,24 @@
+<div tal:attributes="class php:'abstractdirectory-block ' . moduleName . '-abstractdirectory-block'">
+	<p change:create="" model="${documentModel}" parentId="${container/getId}"><tal:block change:translate="&modules.abstractdirectory.frontoffice.create-new-in-topic;; containerLabel container/getLabel">Créer un nouveau document dans la rubrique ${container/getLabel}</tal:block></p>
+	<h2 class="title" tal:condition="displaycontainerlabel" tal:content="container/getLabel" />
+
+	<div class="column-one">
+		<span tal:condition="not: messageContent" tal:replace="itemsContent"/>
+		<span tal:condition="messageContent" tal:replace="messageContent" />
+	</div>
+	
+	<div class="column-two">
+		<span tal:condition="menu" tal:omit-tag="">
+			<h2 class="title" i18n:translate="&modules.abstractdirectory.frontoffice.SubContainerMenuTitle;" />
+			<ul change:menu="menuObject menu; itemName item; maxLevel 1; masterUlClass folder-vertical" tal:omit-tag="">
+				<a class="link" tal:attributes="href item/getUrl" tal:content="item/getLabel" />
+			</ul>
+			<p class="subfolder" i18n:translate="&modules.abstractdirectory.frontoffice.NbSubContainerHelp;" />
+		</span>
+	</div>
+	
+	<div class="cleaner"></div>
+
+	<span change:paginator="paginator" tal:omit-tag=""/>
+	
+</div>

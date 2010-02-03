@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document xmlns="http://www.rbs.fr/schema/change-document/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.rbs.fr/schema/change-document/1.0 http://www.rbschange.fr/static/schema/change-document/1.0.xsd" 
+	model-version="1.0" icon="atom" publish-on-day-change="false" backoffice-indexable="false"
+	table-name-oci="m_absdir_doc_pref" has-url="false">
+	<properties>
+		<add name="label" default-value="preferences" />
+		<add name="nbitemperpage" type="Integer" default-value="10" />
+		<add name="msgforemptyfolder" type="XHTMLFragment" localized="true" />
+	</properties>
+
+	<form>
+		<property name="label" display="hidden" />
+		<property name="msgforemptyfolder" width="600px" height="200px" />
+	</form>
+
+	<statuses default="PUBLICATED" />
+</document>

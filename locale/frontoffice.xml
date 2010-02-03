@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<localization>
+  <entity id="NbSubContainerHelp">
+    <locale lang="fr">(X) Nombre d'éléments</locale>
+    <locale lang="en">(X) Number of elements</locale>
+    <locale lang="de">(X) Anzahl Elemente</locale>
+  </entity>
+  <entity id="SubContainerMenuTitle">
+    <locale lang="fr">liste des dossiers</locale>
+    <locale lang="en">folders list</locale>
+    <locale lang="de">Ordnerliste</locale>
+  </entity>
+  <entity id="BackToParentContainer">
+    <locale lang="fr">retour au niveau précédent</locale>
+    <locale lang="en">back to previous level</locale>
+    <locale lang="de">Zurück zur vorigen Ebene</locale>
+  </entity>
+  <entity id="create-new-in-topic">
+    <locale lang="fr">Créer un nouveau document dans la rubrique {containerLabel}</locale>
+    <locale lang="en">Create a new document in the topic {containerLabel}</locale>
+    <locale lang="de">Erstellen Sie ein neues Dokument in der Kategorie {containerLabel}</locale>
+  </entity>
+</localization>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+	<binding fileName="modules/abstractdirectory/persistentdocument/import/abstractdirectory_binding.xml" />
+	<binding fileName="modules/list/persistentdocument/import/list_binding.xml" />
+	
+	<systemfolder module="list" relatedmodule="abstractdirectory">
+		<staticlist listid="modules_abstractdirectory/blockdisplayorder"
+			label="Type de tri de la liste" 
+			description="Type de tri de la liste">
+				<staticitem label="&amp;modules.abstractdirectory.bo.general.Manual;" value="manual"/>
+				<staticitem label="&amp;modules.abstractdirectory.bo.general.Alphanumeric;" value="alpha"/>
+		</staticlist>
+		
+		<staticlist listid="modules_abstractdirectory/blockdisplaynavigation"
+			label="Type de navigation" 
+			description="Type de navigation">
+				<staticitem label="&amp;modules.abstractdirectory.bo.general.OnlyContainer;" value="onlycontainer"/>
+				<staticitem label="&amp;modules.abstractdirectory.bo.general.WithNavigation;" value="navigation"/>
+		</staticlist>	
+	</systemfolder>
+	
+	<preferences nbitemperpage="10" 
+		label-fr="Préférences"
+		label-en="Preferences"
+		msgforemptyfolder-fr="Dossier vide" 
+		msgforemptyfolder-en="Empty folder">
+	</preferences>	
+</script>

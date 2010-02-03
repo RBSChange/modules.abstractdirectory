@@ -1,0 +1,44 @@
+.abstractdirectory-block{
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.abstractdirectory-block .column-one{
+	float: left;
+	display: block;
+	width: 70%;
+}
+.abstractdirectory-block .column-two{
+	float: right;
+	display: block;
+	width: 29%;
+}
+.abstractdirectory-block ol.module-list{
+	list-style: none;
+	margin-top: 20px;
+}
+.abstractdirectory-block ol.module-list li{
+	margin-bottom: 20px;
+	display: block;
+	float: left;
+}
+.abstractdirectory-block ul.folder-vertical{
+	list-style-type: none;
+}
+.abstractdirectory-block ul.folder-vertical li{
+	line-height: 16px;
+	background: url(/media/frontoffice/folder.png) no-repeat;
+	text-align: left;
+	padding-left: 20px;
+	font-weight: lighter;
+}
+.abstractdirectory-block ul.folder-horizontal{
+	list-style-type: none;
+}
+.abstractdirectory-block ul.folder-horizontal li{
+	display: inline;
+	background: url(/media/frontoffice/folder_page.png) no-repeat 0 .1em;
+	padding: 2px 0 2px 20px;
+}
