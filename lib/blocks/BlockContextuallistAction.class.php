@@ -202,6 +202,6 @@ class abstractdirectory_BlockContextuallistAction extends abstractdirectory_Bloc
 			->add(Restrictions::childOf($subContainer->getId()))
 			->add(Restrictions::hasTag($tagName))->findUnique();
 
-		return LinkHelper::getUrl($page, $context->getLang(), array($this->moduleName.'Param' => array('page' => 1)));
+		return LinkHelper::getUrl($page, $this->getLang(), array($this->moduleName.'Param' => array('page' => 1)));
 	}
 }
