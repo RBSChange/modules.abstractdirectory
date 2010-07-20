@@ -1,12 +1,11 @@
 <?php
 class abstractdirectory_BlockContextuallistAction extends abstractdirectory_BlockMainAction
 {
-
 	/**
-   * @param block_BlockContext $context
-   * @param block_BlockRequest $request
-   * @return String view name
-   */
+	 * @param block_BlockContext $context
+	 * @param block_BlockRequest $request
+	 * @return String view name
+	 */
 	public final function execute($context, $request)
 	{
 		// Get the container
@@ -25,25 +24,11 @@ class abstractdirectory_BlockContextuallistAction extends abstractdirectory_Bloc
 		}
 
 		$items = array();
-
 		if (is_null($permissionName) || $this->getPermissionService()->hasPermission($user, $permissionName, $container->getId()))
 		{
 			$items = $this->getOrderedItems($container);
-
-			// Get the preference of module
-			$preferenceDocument = ModuleService::getInstance()->getPreferencesDocument($this->moduleName);
-			if ( !is_null( $preferenceDocument) )
-			{
-				$this->setParameter('preferenceDocument', $preferenceDocument);
-				$nbItemPerPage = ! is_null($preferenceDocument->getNbitemperpage()) ? $preferenceDocument->getNbitemperpage() : 10;
-			}
-			else
-			{
-				$nbItemPerPage = 10;
-			}
-
+			$nbItemPerPage = $this->getItemPerPage();
 			$this->manageNavigation($container, $context);
-
 		}
 
 		// Set the paginator
@@ -51,7 +36,7 @@ class abstractdirectory_BlockContextuallistAction extends abstractdirectory_Bloc
 		$this->setParameter('paginator', $paginator);
 		$this->setParameter('moduleName', $this->moduleName);
 		$this->setParameter('componentName', $this->componentName);
-
+		
 		$this->setAdditionalParameters();
 
 		if (!$this->hasParameter('displaycontainerlabel'))
@@ -66,6 +51,26 @@ class abstractdirectory_BlockContextuallistAction extends abstractdirectory_Bloc
 		return array($this->viewModuleName, ucfirst($this->getType()), block_BlockView::SUCCESS);
 	}
 
+	/**
+	 * @return integer
+	 */
+	protected function getItemPerPage()
+	{
+		if ($this->hasParameter('nbItemsPerPage'))
+		{
+			$nbItemPerPage = $this->getParameter('nbItemsPerPage');
+		}
+		else 
+		{
+			$nbItemPerPage = intval(ModuleService::getInstance()->getPreferenceValue($this->moduleName, 'nbitemperpage'));
+		}
+		if ($nbItemPerPage < 1)
+		{
+			$nbItemPerPage = 10;
+		}
+		return $nbItemPerPage;
+	}
+	
 	/**
 	 * Return the name of the permission can be checked or null for public item
 	 * @return String

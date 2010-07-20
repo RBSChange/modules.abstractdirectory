@@ -1,24 +1,23 @@
 <div tal:attributes="class php:'abstractdirectory-block ' . moduleName . '-abstractdirectory-block'">
-	<p change:create="" model="${documentModel}" parentId="${container/getId}"><tal:block change:translate="&modules.abstractdirectory.frontoffice.create-new-in-topic;; containerLabel container/getLabel">Créer un nouveau document dans la rubrique ${container/getLabel}</tal:block></p>
-	<h2 class="title" tal:condition="displaycontainerlabel" tal:content="container/getLabel" />
+	<p change:create="" model="${documentModel}" parentId="${container/getId}"><tal:block change:translate="modules.abstractdirectory.frontoffice.create-new-in-topic; containerLabel container/getLabel">Créer un nouveau document dans la rubrique ${container/getLabelAsHtml}</tal:block></p>
+	<h2 change:h="" tal:condition="displaycontainerlabel">${container/getLabelAsHtml}</h2>
 
 	<div class="column-one">
-		<span tal:condition="not: messageContent" tal:replace="itemsContent"/>
-		<span tal:condition="messageContent" tal:replace="messageContent" />
+		<span tal:condition="not: messageContent">${itemsContent}</span>
+		<span tal:condition="messageContent">${messageContent}</span>
 	</div>
 	
 	<div class="column-two">
-		<span tal:condition="menu" tal:omit-tag="">
-			<h2 class="title" i18n:translate="&modules.abstractdirectory.frontoffice.SubContainerMenuTitle;" />
-			<ul change:menu="menuObject menu; itemName item; maxLevel 1; masterUlClass folder-vertical" tal:omit-tag="">
-				<a class="link" tal:attributes="href item/getUrl" tal:content="item/getLabel" />
-			</ul>
-			<p class="subfolder" i18n:translate="&modules.abstractdirectory.frontoffice.NbSubContainerHelp;" />
-		</span>
+		<tal:block tal:condition="menu">
+			<h2 change:h="" change:translate="modules.abstractdirectory.frontoffice.SubContainerMenuTitle"></h2>
+			<tal:block change:menu="menuObject menu; itemName item; maxLevel 1; masterUlClass folder-vertical">
+				<a class="link" tal:attributes="href item/getUrl">${item/getLabel}</a>
+			</tal:block>
+			<p class="subfolder" change:translate="modules.abstractdirectory.frontoffice.NbSubContainerHelp" />
+		</tal:block>
 	</div>
 	
 	<div class="cleaner"></div>
 
-	<span change:paginator="paginator" tal:omit-tag=""/>
-	
+	<tal:block change:paginator="paginator" />	
 </div>

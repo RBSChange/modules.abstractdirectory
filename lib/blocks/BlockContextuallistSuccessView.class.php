@@ -50,22 +50,32 @@ class abstractdirectory_BlockContextuallistSuccessView extends abstractdirectory
 				->setType(ucfirst($this->componentName) . 'List')
 				->setParameter('moduleName', $this->moduleName)
 				->setParameter('componentName', $this->componentName)
-				
 				->setDocumentsParameter($paginator);
 			$this->setAttribute('itemsContent', $this->forward($subBlock));
 		}
 		else
 		{
-			$message = null;
-			if ( ! is_null($this->getParameter('preferenceDocument') ) )
-			{
-				$message = $this->getParameter('preferenceDocument')->getMsgforemptyfolder();
-			}
-			$messageContent = ! is_null($message) ? $message : '';
-			$this->setAttribute('messageContent', $messageContent);
+			$this->setAttribute('messageContent', $this->getMessageForEmptyFolder());
 		}
 
 		$this->setAttribute('itemsCount', $itemCount);
 		$this->setAttribute('documentModel', $this->moduleName.'/'.$this->componentName);
+	}
+	
+	/**
+	 * @return string
+	 */
+	protected function getMessageForEmptyFolder()
+	{
+		$message = null;
+		if ($this->getParameter('preferenceDocument') !== null)
+		{
+			$message = $this->getParameter('preferenceDocument')->getMsgforemptyfolder();
+		}
+		else if ($this->getParameter('msgKeyForEmptyFolder'))
+		{
+			$message = f_Locale::translate('&' . $this->getParameter('msgKeyForEmptyFolder') . ';');
+		}
+		return $message !== null ? $message : '';
 	}
 }
