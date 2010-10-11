@@ -10,7 +10,14 @@ class abstractdirectory_BlockContextuallistAction extends abstractdirectory_Bloc
 	{
 		// Get the container
 		$container = $this->getContainer($context, $request);
-		f_util_TypeValidator::check($container, 'website_persistentdocument_topic');
+		if (!($container instanceof website_persistentdocument_topic))
+		{
+			if (Framework::isDebugEnabled())
+			{
+				Framework::debug(__METHOD__ . ' invalid container: ' . (($container !== null) ? $container->__toString() : 'null'));
+			}
+			return block_BlockView::NONE;
+		}
 		$this->setParameter('container', $container);
 
 		$permissionName = $this->getPermissionName();
