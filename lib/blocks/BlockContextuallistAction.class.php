@@ -39,7 +39,7 @@ class abstractdirectory_BlockContextuallistAction extends abstractdirectory_Bloc
 		}
 
 		// Set the paginator
-		$paginator = new paginator_Paginator($this->moduleName, $request->getParameter(paginator_Paginator::REQUEST_PARAMETER_NAME, 1), $items, $nbItemPerPage);
+		$paginator = new paginator_Paginator($this->moduleName, $request->getParameter(paginator_Paginator::PAGEINDEX_PARAMETER_NAME, 1), $items, $nbItemPerPage);
 		$this->setParameter('paginator', $paginator);
 		$this->setParameter('moduleName', $this->moduleName);
 		$this->setParameter('componentName', $this->componentName);
