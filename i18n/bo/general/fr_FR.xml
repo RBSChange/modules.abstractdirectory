@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.abstractdirectory.bo.general" lcid="fr_FR">
+  <key id="module-name">abstractdirectory</key>
+  <key id="alphanumeric">alphanumérique</key>
+  <key id="manual">manuel</key>
+  <key id="date">par date</key>
+  <key id="onlycontainer">dossier seulement</key>
+  <key id="withnavigation">afficher la navigation</key>
+</i18n>

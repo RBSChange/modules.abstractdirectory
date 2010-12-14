@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.abstractdirectory.frontoffice" lcid="de_DE">
+  <key id="nbsubcontainerhelp">(X) Anzahl Elemente</key>
+  <key id="subcontainermenutitle">Ordnerliste</key>
+  <key id="backtoparentcontainer">Zurück zur vorigen Ebene</key>
+  <key id="create-new-in-topic">Erstellen Sie ein neues Dokument in der Kategorie {containerLabel}</key>
+</i18n>
