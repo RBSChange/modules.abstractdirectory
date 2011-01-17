@@ -19,10 +19,15 @@
 		</staticlist>	
 	</systemfolder>
 	
-	<preferences nbitemperpage="10" 
-		label-fr="Préférences"
-		label-en="Preferences"
-		msgforemptyfolder-fr="Dossier vide" 
-		msgforemptyfolder-en="Empty folder">
-	</preferences>	
+	<i18n lang="fr">
+		<preferences id="pref" nbitemperpage="10" 
+			label="Préférences"
+			msgforemptyfolder="Dossier vide" />
+	</i18n>	
+	
+	<i18n lang="en">
+		<preferences byRefid="pref" 
+			label="Preferences"
+			msgforemptyfolder="Empty folder" />
+	</i18n>		
 </script>
