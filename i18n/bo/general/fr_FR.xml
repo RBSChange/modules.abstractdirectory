@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <i18n baseKey="m.abstractdirectory.bo.general" lcid="fr_FR">
   <key id="module-name">abstractdirectory</key>
+  <key id="tree-root-name">abstractdirectory</key>
+  <key id="system-folder-name">abstractdirectory</key>
   <key id="alphanumeric">alphanumérique</key>
   <key id="manual">manuel</key>
   <key id="date">par date</key>
