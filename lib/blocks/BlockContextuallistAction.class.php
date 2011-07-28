@@ -124,7 +124,7 @@ class abstractdirectory_BlockContextuallistAction extends abstractdirectory_Bloc
 	protected function getContainer($context, $request)
 	{
 		// Get the parent topic
-		$ancestor = $context->getAncestors();
+		$ancestor = $context->getAncestorIds();
         $topicId = f_util_ArrayUtils::lastElement($ancestor);
 
         return DocumentHelper::getDocumentInstance($topicId);

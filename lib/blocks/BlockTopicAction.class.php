@@ -115,6 +115,6 @@ class abstractdirectory_BlockTopicAction extends abstractdirectory_BlockContextu
 	 */
 	protected function getUrlForSubNavigation($container, $context, $subContainer)
 	{
-		return LinkHelper::getDocumentUrl($context->getPageDocument(), $context->getLang(), array($this->moduleName.'Param' => array('container' => $subContainer->getId(), 'page' => 1)));
+		return LinkHelper::getDocumentUrl($context->getPersistentPage(), $context->getLang(), array($this->moduleName.'Param' => array('container' => $subContainer->getId(), 'page' => 1)));
 	}
 }
