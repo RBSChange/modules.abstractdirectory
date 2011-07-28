@@ -2,13 +2,13 @@
 
 	<h2 class="title" tal:condition="displaycontainerlabel" tal:content="container/getLabel" />
 		
-	<ul change:menu="menuObject horizontalMenu; itemName item; maxLevel -1; masterUlClass folder-horizontal" tal:omit-tag="">
+	<tal:block change:menu="menuObject horizontalMenu; itemName item; maxLevel '-1'; masterUlClass folder-horizontal">
 		<a class="link" tal:condition="item/hasUrl" tal:attributes="href item/getUrl" tal:content="item/getLabel" />
 		<strong tal:condition="not: item/hasUrl" tal:content="item/getLabel" />
-	</ul>
+	</tal:block>
 
 	<p tal:condition="containerParentParam" class="return-link">
-		<a change:currentPageLink="containerParentParam" i18n:translate="&modules.abstractdirectory.frontoffice.BackToParentContainer;"/>
+		<a change:currentpagelink="containerParentParam" tal:content="trans:m.abstractdirectory.frontoffice.backtoparentcontainer,ucf"/>
 	</p>
 
 	<div class="column-one">
@@ -18,11 +18,11 @@
 	
 	<div class="column-two">
 		<span tal:condition="menu" tal:omit-tag="">
-			<h2 class="title" i18n:translate="&modules.abstractdirectory.frontoffice.SubContainerMenuTitle;" />
-			<ul change:menu="menuObject menu; itemName item; maxLevel 1; masterUlClass folder-vertical" tal:omit-tag="">
+			<h2 class="title" tal:content="trans:m.abstractdirectory.frontoffice.subcontainermenutitle,ucf" />
+			<tal:block change:menu="menuObject menu; itemName item; maxLevel '1'; masterUlClass folder-vertical">
 				<a class="link" tal:attributes="href item/getUrl" tal:content="item/getLabel" />
-			</ul>
-			<p class="subfolder" i18n:translate="&modules.abstractdirectory.frontoffice.NbSubContainerHelp;" />
+			</tal:block>
+			<p class="subfolder" tal:content="trans:m.abstractdirectory.frontoffice.nbsubcontainerhelp,ucf" />
 		</span>
 	</div>
 	
