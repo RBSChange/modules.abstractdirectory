@@ -30,13 +30,13 @@ class abstractdirectory_BlockListSuccessView extends abstractdirectory_BlockMain
 		$templateName = f_util_StringUtils::ucfirst($this->moduleName) . '-Block-' . f_util_StringUtils::ucfirst($this->componentName) . 'List-Success';
 
 		// Search the template in your extended module, if not found search in abstractdirectory
-		if ( ! is_null(TemplateResolver::getInstance()->setPackageName('modules_'.$this->moduleName)->setMimeContentType(K::HTML)->getPath($templateName)) )
+		if ( ! is_null(TemplateResolver::getInstance()->setPackageName('modules_'.$this->moduleName)->setMimeContentType('html')->getPath($templateName)) )
 		{
-			$this->setExternalTemplateName('modules_'.$this->moduleName, $templateName, K::HTML );
+			$this->setExternalTemplateName('modules_'.$this->moduleName, $templateName, 'html' );
 		}
 		else 
 		{
-			$this->setTemplateName('Abstractdirectory-Block-List-Success', K::HTML );
+			$this->setTemplateName('Abstractdirectory-Block-List-Success', 'html' );
 		}
 		
 		$this->setAttribute( 'items', $this->getDocumentsParameter() );

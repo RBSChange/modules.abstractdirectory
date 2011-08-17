@@ -9,7 +9,7 @@ abstract class abstractdirectory_BlockMainView extends block_BlockView
 	 * @param string $mimeType
 	 * @throws BlockException
 	 */
-	public final function setExternalTemplateName($packageName, $templateName, $mimeType = K::HTML)
+	public final function setExternalTemplateName($packageName, $templateName, $mimeType = 'html')
 	{
 	    $templateLoader = Loader::getInstance('template')->setMimeContentType($mimeType);
 
@@ -23,7 +23,7 @@ abstract class abstractdirectory_BlockMainView extends block_BlockView
     		}
     		catch (TemplateNotFoundException $e)
     		{
-    			$this->template = $templateLoader->setPackageName('modules_' . K::GENERIC_MODULE_NAME)->load($templateName);
+    			$this->template = $templateLoader->setPackageName('modules_' . 'generic')->load($templateName);
     		}
 		}
 		catch (TemplateNotFoundException $e)

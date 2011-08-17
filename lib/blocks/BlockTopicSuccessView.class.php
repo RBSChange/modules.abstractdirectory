@@ -31,13 +31,13 @@ class abstractdirectory_BlockTopicSuccessView extends abstractdirectory_BlockMai
 		$templateName = f_util_StringUtils::ucfirst($this->moduleName) . '-Block-Topic-Success';
 		
 		// Search the template in your extended module, if not found search in abstractdirectory
-		if ( ! is_null(TemplateResolver::getInstance()->setPackageName('modules_'.$this->moduleName)->setMimeContentType(K::HTML)->getPath($templateName)) )
+		if ( ! is_null(TemplateResolver::getInstance()->setPackageName('modules_'.$this->moduleName)->setMimeContentType('html')->getPath($templateName)) )
 		{
-			$this->setExternalTemplateName('modules_'.$this->moduleName, $templateName, K::HTML );
+			$this->setExternalTemplateName('modules_'.$this->moduleName, $templateName, 'html' );
 		}
 		else 
 		{
-			$this->setTemplateName('Abstractdirectory-Block-Topic-Success', K::HTML );
+			$this->setTemplateName('Abstractdirectory-Block-Topic-Success', 'html' );
 		}
 
 		$paginator = $this->getParameter('paginator');

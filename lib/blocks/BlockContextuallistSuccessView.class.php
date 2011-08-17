@@ -31,13 +31,13 @@ class abstractdirectory_BlockContextuallistSuccessView extends abstractdirectory
 		// Search the template in your extended module, if not found search in abstractdirectory
 		$templateName = f_util_StringUtils::ucfirst($this->moduleName) . '-Block-ContextualList-Success';
 
-		if ( ! is_null(TemplateResolver::getInstance()->setPackageName('modules_'.$this->moduleName)->setMimeContentType(K::HTML)->getPath($templateName)) )
+		if ( ! is_null(TemplateResolver::getInstance()->setPackageName('modules_'.$this->moduleName)->setMimeContentType('html')->getPath($templateName)) )
 		{
-			$this->setExternalTemplateName('modules_'.$this->moduleName, $templateName, K::HTML );
+			$this->setExternalTemplateName('modules_'.$this->moduleName, $templateName, 'html' );
 		}
 		else 
 		{
-			$this->setTemplateName('Abstractdirectory-Block-ContextualList-Success', K::HTML );
+			$this->setTemplateName('Abstractdirectory-Block-ContextualList-Success', 'html' );
 		}
 		
 		$paginator = $this->getParameter('paginator');
