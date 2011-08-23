@@ -88,11 +88,11 @@ class abstractdirectory_BlockContextuallistAction extends abstractdirectory_Bloc
 	}
 
 	/**
-	 * @return f_permission_PermissionService
+	 * @return change_PermissionService
 	 */
 	protected final function getPermissionService()
 	{
-		return f_permission_PermissionService::getInstance();
+		return change_PermissionService::getInstance();
 	}
 
 	/**
