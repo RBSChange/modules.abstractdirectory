@@ -4,7 +4,8 @@
   <key id="tree-root-name">abstractdirectory</key>
   <key id="system-folder-name">abstractdirectory</key>
   <key id="manual">manual</key>
-  <key id="date">per date</key>
+  <key id="date">by date</key>
   <key id="onlycontainer">folder only</key>
-  <key id="withnavigation">show navigation</key>
+  <key id="withnavigation">display the navigation</key>
+  <key id="module-name">abstractdirectory</key>
 </i18n>
